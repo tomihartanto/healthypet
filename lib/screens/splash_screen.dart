@@ -1,11 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:healthypet/screens/home_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
+
+    Future.delayed(const Duration(seconds: 3)).then((value) {
+      Navigator.of(context).pushAndRemoveUntil(
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+          (route) => false);
+    });
+
     return Scaffold(
       body: Stack(
         children: [
@@ -31,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                           text: "Helping you\nto keep ",
                           style: GoogleFonts.manrope(
                               fontSize: 24,
-                              color: Color(0xFFDEE1FE),
+                              color: const Color(0xFFDEE1FE),
                               letterSpacing: 3.5 / 100,
                               height: 152 / 100),
                           children: const [
