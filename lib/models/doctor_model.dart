@@ -23,5 +23,10 @@ var doctors = [
       name: "Dr. Vanessa ",
       image: "Dr. Vanessa.jpg",
       services: [Service.vaccine, Service.surgery],
+      distance: 10),
+  DoctorModel(
+      name: "Dr. Vanessa ",
+      image: "Dr. Vanessa.jpg",
+      services: [Service.vaccine, Service.surgery],
       distance: 10)
 ];
